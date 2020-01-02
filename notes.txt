@@ -1,0 +1,283 @@
+Myself harish. I was born & bought up in hyderabad.
+
+I have started my career with analogics tech india limited as software engineer worked there for 4years having expertise in hand held applications development using c++,qt. Currently i am working at honeywell technology solution as senior engineer from last 11 months responsible for developing windows based desktop & tablet applications using c++ & qt.
+
+apart from development am i also involved in requirement gathering, client coordination , maintanance & deployment activies.
+-----------------------------------------------------------------------------------------------------------------------------------------
+Current is GDDM an application which is used by aircraft operator & maintanance technicians 
+-----------------------------------------------------------------------------------------------------------------------------------------
+GoDirect™ Data Manager (GDDM), an application from Honeywell, gives you the ability to load data wirelessly on your aircraft in a secure and seamless way. The application is used in conjunction with Honeywell’s wireless data loaders Aircraft Data Gateway.
+
+GDDM tool reduces the cost and time significantly in loading the database on the aircraft each cycle and simplifies the overall process for operators and maintenance technicians.
+
+You get the following with GoDirect Data Manager:
+
+• Ability to download databases direct to your iPad
+• Ability to upload databases direct to the avionics
+• Filter services by aircraft tail
+• Access to help content
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+1) Storage classes: extern, auto ,static , register
+2) :: is also used to access global variable with same name.
+3) structure : collection of different data types. Defined with struct structname
+4) Function call: Typically include pushing call on the stack and making an assembly language CALL
+5) Function pointer: Pointer to function is a called as function pointer.
+void (*funcptr)();
+6) Accessor(getX) and mutator(setX) functions.
+7) For static variables  , storage is on static data area not on stack. 
+8) template<typename t>
+t max1(t a,t b)
+
+virtual Function
+1) A virtual function is member function that needs to be redefined in dervied classes. virtual function is called using by derived class object with base class reference or a pointer.
+2)By applying virtual keyword we are telling compiler to perform late binding on the function.
+
+EX; 
+Base    : CMedia 
+Dervied : CCreateCD, CCreateDVD, CCreateUSB , CCreateDRIVE
+
+polymorphism
+Polymorphism is a concept by which we perform one action in many ways.
+1) compile time polymorphism - function overloading, Operator overloading & templates, 
+2) runtime polymorphism - function overriding and using virtual keyword.
+
+runtime : runtime polymorhism is process in which call to overridden funtions is made at runtime time rather than at compile time.
+
+VTABLE & Vpointer
+vtable maintained by the class contains virtual functions and also vpointer created which is pointing to address of virtual function.
+whenever a polymophic call is made. compiler insert code to fetch the pointer which is pointer address of virtual function.
+
+copy constructor
+Copy constuctor is type of constuctor which is used to create a copy of already existing object of class.
+X(X &a)
+why & is used in copy constructor?
+By adding & we are passing the actual source object to perform memberwise copy of data. If & is not used which leads to concept of call by value where temporary object is created which is wastage of memory on stack space.
+const is used so that source object should not get modified by mistake.
+
+Shallow copy:
+Shallow copy can cause when we design classes with contain dynamic memory allocation.doing member wise copy of dynamically allocated memory 
+Shallow copy copies all the members from one object to another object. 
+Deep copy does all these & also copies any pointer object.
+
+Ex:
+
+char *p;
+
+shallow copy
+strcpy(des.p ,src.p);
+deep copy
+p = new char(size+1);
+
+for (int i=0;i<strlen;i++)
+{
+p[i] = source[i];
+}
+Assignment:
+Operator : MyString& MyString::operator=(const MyString & source)
+
+structure & class differences
+1) class is used for combining data & member function whereas structure used for combing different data together.
+2) class is reference type created on heap & structure is value type created on stack.
+3) class supports inheritance whereas structure does not support.
+4) class by default all are private variables & strucuture default are public	
+
+
+
+
+
+sorting:
+bubble sort : it a one of the sorting algorithm where adjacent elements bubbled in left to right or right to left till end of list.
+
+  for (i = 0; i < n-1; i++)      //1st loop
+      
+    // Last i elements are already in place  
+    for (j = 0; j < n-i-1; j++)   // j = n - i -1 , s
+        if (arr[j] > arr[j+1])  
+            swap(&arr[j], &arr[j+1]);  
+
+
+Difference b/w size() & sizeof operator?
+size() method returns number of elements in container, sizeof returns actual memory allocated.
+
+Diff b/w list & vector
+1) Insertion & deletion
+2) random acces
+3) interation invalidation
+
+STL:
+containers : 4types - container is holder object which stores a collection of object.They are implemented as class templates so that diff type of elements are inserted. they provide mechansim to store the data, storage space and member functions to access them.
+1) sequence container:  sequence containers, meaning the data is reliably ordered and stored in contagios memory locations.
+a)array  : fixed size sequence containers hold a specific number of elements odered in strict linear sequence.
+ex : fill(5) , array<int,2> a = {1,2} , for(i:a){x} , swap
+b) vector : vector are sequence container represting arrays with dynamically growing size, which has ability to manage storage & grow in size ,insertion & deletion happens at one end just like arrays other than one end. vectors use a single array that needs to be occasionally reallocated for growth.
+Ex: begin() , end() ,rbegin(), rend()
+
+list  : list are sequence containers that allow constant time insertion , deletion and iteration in both the directions.
+deqeue : double ended queue which are similar to vector.
+forward_list : 
+2) container adapters: container adapters are interface created by limiting functionality on a preexisting container and providing diff set of functionality.
+stack : stack are container adapter which are specifically designed to operate in LIFO manner. where elements are inserted & deleted from 1end only
+queue : queue are container adapter which are designed to operate in FIFO manner.
+priority queue
+3) associative containers: Elements are not stored in order but association with each other.
+set
+multiset
+map
+multimap
+4) unordered associateve containers:
+unordered_set
+unordered_multiset
+unordered_map
+unordered_multipmap
+
+
+Data structures:
+1) array
+2) linkedlist - single,circular
+3) Stack
+4) queue
+
+class Stack { 
+    int top; 
+  
+public: 
+    int a[MAX]; // Maximum size of Stack 
+  
+    Stack() { top = -1; } 
+    bool push(int x); 
+    int pop(); 
+    int peek(); 
+    bool isEmpty(); 
+}; 
+  
+bool Stack::push(int x) 
+{ 
+    if (top >= (MAX - 1)) { 
+        cout << "Stack Overflow"; 
+        return false; 
+    } 
+    else { 
+        a[++top] = x; 
+        cout << x << " pushed into stack\n"; 
+        return true; 
+    } 
+} 
+  
+int Stack::pop() 
+{ 
+    if (top < 0) { 
+        cout << "Stack Underflow"; 
+        return 0; 
+    } 
+    else { 
+        int x = a[top--]; 
+        return x; 
+    } 
+} 
+int Stack::peek() 
+{ 
+    if (top < 0) { 
+        cout << "Stack is Empty"; 
+        return 0; 
+    } 
+    else { 
+        int x = a[top]; 
+        return x; 
+    } 
+} 
+  
+bool Stack::isEmpty() 
+{ 
+    return (top < 0); 
+} 
+
+
+SingleTon:
+class single
+{
+static single *m_single;
+
+static single* getInstance();
+statis void resetInstance(); 
+};
+
+single* single::getInstance()
+{
+	if(m_single!= null)
+	{
+		m_single = new single();
+	}
+	return m_single;
+}
+
+single::getInstance()->doStuff();
+
+
+class uploadthread : QThread
+{
+protected:
+void run();
+};
+
+
+#include<iostream>
+#include<string.h>
+
+using namespace std;
+
+class copySample
+{
+private:
+char *str;
+public:
+copySample(const char *pstr)
+{
+str= new char[6];
+strcpy(str,pstr);
+}
+copySample(const copySample &cs)
+{
+str = new char[strlen(cs.str)];
+strcpy(str,cs.str);
+
+}
+void getStr()
+{
+	cout<<"String:"<<str<<" Len:"<<strlen(str)<<" AddR:"<<(unsigned long)&str[0]<<endl;
+}
+void updateStr(const char *ustr)
+{
+strcat(str,ustr);
+}
+copySample& operator=(copySample &cst)
+{
+this->str = new char[strlen(cst.str)];
+strcpy(this->str,cst.str);
+return *this;
+}
+};
+
+int main()
+{
+copySample c1("Harish");
+c1.getStr();//1
+copySample c2= c1;
+c2.getStr();//2
+c2.updateStr("Ch");
+c2.getStr();//3
+c1.getStr();//4
+copySample c3("IT");// this string is gone
+c3 = c1;
+c3.getStr();//5
+c3.updateStr(" HITS");
+c3.getStr();//6
+c1.getStr();//7
+return 0;
+}
+
+
+
+
+
+
