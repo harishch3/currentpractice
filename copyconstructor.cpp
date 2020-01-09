@@ -13,11 +13,11 @@ copySample(const char *pstr)
 str= new char[6];
 strcpy(str,pstr);
 }
-copySample(const copySample &cs)
+copySample(const copySample cs)
 {
-str = new char[strlen(cs.str)];
-strcpy(str,cs.str);
-
+cout<<"copy constructor called"<<endl; 
+str = new char[strlen(cs->str)];
+strcpy(str,cs->str);
 }
 void getStr()
 {
@@ -29,6 +29,7 @@ strcat(str,ustr);
 }
 copySample& operator=(copySample &cst)
 {
+cout<<"assignment operator called"<<endl;
 this->str = new char[strlen(cst.str)];
 strcpy(this->str,cst.str);
 return *this;
@@ -39,7 +40,7 @@ int main()
 {
 copySample c1("Harish");
 c1.getStr();//1
-copySample c2= c1;
+copySample c2(c1);
 c2.getStr();//2
 c2.updateStr("Ch");
 c2.getStr();//3
