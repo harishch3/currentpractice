@@ -5,7 +5,7 @@ using namespace std;
 void function()
 {
 static int i=0;
-cout<<++i<<endl;
+cout<<i++<<endl;
 }
 
 int main()
