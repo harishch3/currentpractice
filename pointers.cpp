@@ -10,16 +10,35 @@ cout<<"\n"<<t<<endl;
 int main()
 {
   	//pointer
-	int p =100;
-	int *p1 =NULL;
-	cout<<p1<<endl;
-	p1 = (int*) malloc(100*sizeof(int));
-	cout<<*p1<<endl; 
-	*p1 = *p1+69888;
-	cout<<*p1<<endl;
-	free(p1);
-	*p1--;
-	cout<<*p1<<endl;
+	int p =100; // integer variable
+	int *p1 =NULL; // null initialization to pointer p1
+	cout<<p1<<endl;  // print address of pointer p1
+	p1 = (int*) malloc(100*sizeof(int)); // allocating memory to pointer p1
+	cout<<*p1<<endl;  // print value of p1
+	*p1 = p; // assigning value to pointer using p variable
+	cout<<*p1<<endl; // print value of p1 
+	free(p1); // memory is cleared for p1
+	*p1--; // pointer decrement
+	cout<<*p1<<endl; // print value of p1 - which prints junk value
+	
+	int y = 125;
+	const int  *p4=&y; // pointer to constant - as name suggests it is a pointer to a constant variable which cannot be modified.
+	//*p4 = *p4+1;       // we tried modifying value it gave readonly error.
+	cout<<*p4<<endl; // print value of p4
+	
+	int x = 126; 
+	int* const p5 = &x; //constant pointer - as name suggest is pointer for which initialization needs to be done only once just like reference and can modify it's 	values
+	//p5 = &y;
+	cout<<*p5<<endl;
+	
+	int *a[5];
+	
+	int ary[] = {5, 10, 20, 40, 80};	
+	int (*ptr)[5];	
+	ptr = &ary;	
+	*(*ptr+10) = 25;
+	cout<<*(*ptr+10)<<endl;
+	
 	
 	
 /* 	// reference
